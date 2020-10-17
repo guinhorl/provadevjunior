@@ -32,7 +32,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<td><?= $pessoa->nome ." ". $pessoa->sobrenome ?></td>
 				<td>
 					<div class="botaoList">
-						<a href="<?= base_url('add-contato') ?>" class="btn btn-primary btn-sm">&#x2795; Contato</a>
+						<a href="<?= base_url('contato/verContato/' . $pessoa->id) ?>" class="btn btn-primary btn-sm">&#x2795; Contato</a>
 						<a href="<?= base_url('welcome/pessoaView/' . $pessoa->id) ?>" class="btn btn-success btn-sm">Visualizar</a>
 						<a href="<?= base_url('welcome/editarPessoa/' . $pessoa->id) ?>" class="btn btn-warning btn-sm">Editar</a>
 						<a href="<?= base_url('Pessoa/deletarPessoa/' . $pessoa->id) ?>" class="btn btn-danger  btn-sm">Excluir</a>
@@ -57,5 +57,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		</table>
 	</div>
 </main>
+
+
 
 

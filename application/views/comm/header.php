@@ -12,6 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<title>CBMSE-agenda</title>
 
 	<link rel="canonical" href="<?= base_url('https://getbootstrap.com/docs/4.5/examples/offcanvas/') ?>">
+	<link rel="stylesheet" href="<?= base_url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css') ?>"  crossorigin="anonymous">
 
 	<!-- Bootstrap core CSS -->
 	<link href="<?= base_url('assets/dist/css/bootstrap.css') ?>" rel="stylesheet">
@@ -39,6 +40,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body class="bg-light">
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark-azul">
 	<a class="navbar-brand mr-auto mr-lg-0" href="<?= base_url('') ?>">CBMSE-agenda</a>
+	<a class="nav-link btn btn-danger btn-sm d-md-none d-block"  href="<?= base_url('cadastro') ?>">Cadastrar <span class="sr-only">(current)</span></a>
 
 </nav>
 

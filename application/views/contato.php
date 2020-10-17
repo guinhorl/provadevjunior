@@ -26,7 +26,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<div class="col-md-6 form-alig align-items-center p-3 my-3 shadow-sm">
 		<div>
 			<!--Abrir um modal para cadastrar mais contato nessa pessoa-->
-			<a href="<?= base_url('') ?>" class="btn btn-primary btn-sm">&#x2795; Contato</a>
+			<a href="<?= base_url('contato/verContato/' . $pessoa->id) ?>" class="btn btn-primary btn-sm">&#x2795; Contato</a>
 		</div>
 		<div class="h3" style="text-align: center;">
 			<p>Contatos</p>
@@ -76,7 +76,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	</div>
 </div>
 <!--Modal editar contato-->
-<div class="modal" tabindex="-1" role="dialog" id="editarContato" tabindex="-1">
+<div class="modal fade" tabindex="-1" role="dialog" id="editarContato" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -108,3 +109,5 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		</div>
 	</div>
 </div>
+
+
