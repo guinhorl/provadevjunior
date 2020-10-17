@@ -50,12 +50,12 @@ class Contato extends CI_Controller
 			if($this->contatoModel->verificarContato($data['contato_id'], $data['contato'])){
 				$this->session->set_flashdata('mensCadastroContato', "<div class='alert alert-danger'>Esse Contato<strong> já está cadastrada! </strong>
             	<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>");
-				redirect(base_url());
+				redirect(base_url('contato/verContato/' . $data['pessoa_id']));
 			}else{
 				$this->contatoModel->newContato($data);
 				$this->session->set_flashdata('mensCadastroContato', "<div class='alert alert-success'> Contato <strong>cadastrado com sucesso!</strong>
             	<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>");
-				redirect(base_url());
+				redirect(base_url('contato/verContato/' . $data['pessoa_id']));
 			}
 
 		}catch (Exception $error){

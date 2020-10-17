@@ -19,13 +19,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<input type="text" class="form-control" value="<?= $pessoa->sobrenome ?>"disabled="true">
 		</div>
 		<?php 	} ?>
+
 	</div>
 </div>
 
 <div class="container">
 	<div class="col-md-6 form-alig align-items-center p-3 my-3 shadow-sm">
 		<div>
-			<!--Abrir um modal para cadastrar mais contato nessa pessoa-->
+			<a href="<?= base_url('') ?>" class="btn btn-outline-secondary btn-sm">&#x3C;&#x3C; Voltar</a>
 			<a href="<?= base_url('contato/verContato/' . $pessoa->id) ?>" class="btn btn-primary btn-sm">&#x2795; Contato</a>
 		</div>
 		<div class="h3" style="text-align: center;">

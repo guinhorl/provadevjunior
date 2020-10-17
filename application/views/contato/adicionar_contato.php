@@ -19,7 +19,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <div class="container">
 	<div class="col-md-6 form-alig align-items-center p-3 my-3 shadow-sm">
 		<!--Abrir um modal para cadastrar mais contato nessa pessoa-->
-		<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addContato">&#x2795; Contato</button>
+		<div>
+			<a href="<?= base_url('') ?>" class="btn btn-outline-secondary btn-sm">&#x3C;&#x3C; Voltar</a>
+			<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addContato">&#x2795; Contato</button>
+		</div>
+
 
 		<div class="h3" style="text-align: center;">
 			<p>Contatos</p>
@@ -141,7 +145,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					</div>
 					<div class="modal-footer">
 						<button type="submit" class="btn btn-success">Salvar</button>
-						<button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
+						<button type="reset" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
 					</div>
 				</form>
 			</div>
