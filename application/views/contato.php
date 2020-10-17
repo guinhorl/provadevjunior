@@ -53,7 +53,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<a href="<?= base_url('Contato/editar/' . $cp['id_c_p'] ) ?>" class="btn btn-warning btn-sm" >
 							Editar
 						</a>
-						<a href="<?= base_url('') ?>" class="btn btn-danger  btn-sm">Excluir</a>
+						<a href="<?= base_url('Contato/excluirContato/' . $cp['id_c_p'] .'/'.$cp['pessoa_id']) ?>" class="btn btn-danger  btn-sm">Excluir</a>
 					</div>
 				</td>
 			</tr>

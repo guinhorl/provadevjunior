@@ -71,7 +71,7 @@ class Contato extends CI_Controller
 				$data = array(
 					'contato' => $this->input->post('editContato')
 				);
-				var_dump($data);
+				//var_dump($data);
 				//die();
 				//Atualiza
 				$result = $this->contatoModel->editarContatoPessoa($id, $data);
@@ -101,6 +101,22 @@ class Contato extends CI_Controller
 		$this->load->view('comm/header');
 		$this->load->view('contato/editar_contato', $dataContato);
 		$this->load->view('comm/footer');
+
+	}
+
+	public function excluirContato($idCont,$idPess){
+
+		$result = $this->contatoModel->deletarContato($idCont);
+		if ($result){
+			$this->session->set_flashdata('mensDelCont', "<div class='alert alert-success'>Contato<strong> deletado </strong>com sucesso!
+            	<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>");
+			redirect(base_url('contato/verContato/' . $idPess));
+
+		}else{
+			$this->session->set_flashdata('mensDelCont', "<div class='alert alert-danger'><strong>Erro </strong>ao deletar o contato!
+            	<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>");
+			redirect(base_url('contato/verContato/' . $idPess));
+		}
 
 	}
 

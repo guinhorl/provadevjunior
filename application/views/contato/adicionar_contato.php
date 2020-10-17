@@ -28,6 +28,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<div class="h3" style="text-align: center;">
 			<p>Contatos</p>
 		</div>
+		<?php echo $this->session->flashdata('mensDelCont') ?>
+		<?php echo $this->session->flashdata('mensagemDelete') ?>
 		<?php echo $this->session->flashdata('mensEditaCont') ?>
 		<?php echo $this->session->flashdata('mensCadastroContato') ?>
 		<table class="table table-striped">
@@ -50,7 +52,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<a href="<?= base_url('Contato/editar/' . $cp['id_c_p'] ) ?>" class="btn btn-warning btn-sm" >
 									Editar
 								</a>
-								<a href="<?= base_url('') ?>" class="btn btn-danger  btn-sm">Excluir</a>
+								<a href="<?= base_url('Contato/excluirContato/' . $cp['id_c_p'] .'/'.$cp['pessoa_id']) ?>" class="btn btn-danger  btn-sm">Excluir</a>
 							</div>
 						</td>
 					</tr>
@@ -120,7 +122,5 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		</div>
 	</div>
 </div>
-
-
 
 

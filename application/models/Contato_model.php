@@ -45,4 +45,14 @@ class Contato_model extends CI_Model
 		}
 	}
 
+	public function deletarContato($id){
+		$this->db->where('id_c_p',$id);
+		$this->db->delete('contato_pessoa');
+		if($this->db->affected_rows() > 0)
+			return true;
+		else
+			return false;
+
+	}
+
 }
