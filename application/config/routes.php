@@ -54,5 +54,6 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['cadastro'] = 'Welcome/Cadastro';
 $route['contato'] = 'Welcome/Contato';
+$route['editar-contato'] = 'Contato/editar';
 
 $route['editar-pessoa'] = 'Welcome/editarPessoa';

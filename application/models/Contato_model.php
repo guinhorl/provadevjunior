@@ -23,4 +23,26 @@ class Contato_model extends CI_Model
 		return $this->db->get('contato_pessoa')->num_rows();;
 	}
 
+	public function editarContatoPessoa($id, $data){
+		/*$array = array('pessoa_id' => $idPess, 'id' => $idCont);
+		$this->db->where($array);
+		return $this->db->get('contato_pessoa')->num_rows();;*/
+		$this->db->where('id_c_p',$id);
+		$this->db->update('contato_pessoa', $data);
+		if($this->db->affected_rows() > 0)
+			return true;
+		else
+			return false;
+	}
+
+	public function getContato($id){
+		$this->db->select('*')->from('contato_pessoa')->where('id_c_p', $id);
+		$result = $this->db->get()->result();
+		if($result){
+			return $result[0];
+		}else{
+			return false;
+		}
+	}
+
 }

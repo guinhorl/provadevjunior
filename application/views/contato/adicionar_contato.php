@@ -28,6 +28,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<div class="h3" style="text-align: center;">
 			<p>Contatos</p>
 		</div>
+		<?php echo $this->session->flashdata('mensEditaCont') ?>
 		<?php echo $this->session->flashdata('mensCadastroContato') ?>
 		<table class="table table-striped">
 			<thead>
@@ -45,9 +46,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<td><?= $cp['contato'] ?></td>
 						<td>
 							<div class="botaoList">
-								<button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editarContato">
+
+								<a href="<?= base_url('Contato/editar/' . $cp['id_c_p'] ) ?>" class="btn btn-warning btn-sm" >
 									Editar
-								</button>
+								</a>
 								<a href="<?= base_url('') ?>" class="btn btn-danger  btn-sm">Excluir</a>
 							</div>
 						</td>
@@ -70,41 +72,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			</tbody>
 		</table>
 	</div>
-	<!--Modal editar contato-->
-	<div class="modal" tabindex="-1" role="dialog" id="editarContato">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title">Editar Contato</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<form>
-					<div class="modal-body">
-						<div class="form-group ">
-							<label for="selectTipo">Tipo</label>
-							<select class="form-control form-control-sm" id="edtSelectTipo">
-								<?php if ($tipoCont) {
-									foreach ($tipoCont as $tipo) { ?>
-										<option value="<?= $tipo->id ?>"><?= $tipo->tipo ?></option>
-									<?php }
-								} ?>
-							</select>
-						</div>
-						<div class="form-group">
-							<label for="tipoContato">Contato</label>
-							<input type="text" class="form-control" id="tipoContato">
-						</div>
-					</div>
-					<div class="modal-footer">
-						<button type="submit" class="btn btn-success">Salvar</button>
-						<button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+
 
 	<!--Modal adicionar Contato-->
 	<div class="modal" tabindex="-1" role="dialog" id="addContato">
