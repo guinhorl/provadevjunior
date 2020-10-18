@@ -71,8 +71,7 @@ class Contato extends CI_Controller
 				$data = array(
 					'contato' => $this->input->post('editContato')
 				);
-				//var_dump($data);
-				//die();
+
 				//Atualiza
 				$result = $this->contatoModel->editarContatoPessoa($id, $data);
 				if ($result){
@@ -97,7 +96,7 @@ class Contato extends CI_Controller
 		$dataContato['dataContato'] = $this->contatoModel->getContato($id);
 		$ipPessoa = $dataContato['dataContato']->pessoa_id;
 		$dataContato['pessoa'] = $this->pessoaModel->verPessoa($ipPessoa);
-		var_dump($dataContato['pessoa']);
+
 		$this->load->view('comm/header');
 		$this->load->view('contato/editar_contato', $dataContato);
 		$this->load->view('comm/footer');

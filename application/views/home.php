@@ -18,6 +18,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<?php echo $this->session->flashdata('mensagemEditar') ?>
 		<?php echo $this->session->flashdata('mensagemDelete') ?>
 		<h6 class="border-bottom border-gray pb-2 mb-0">Cadastrados</h6>
+		<div style="text-align: center;">
+			<?= $this->pagination->create_links() ?>
+		</div>
 		<table class="table table-striped">
 			<thead>
 			<tr>
@@ -26,8 +29,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			</tr>
 			</thead>
 			<tbody>
-			<?php if ($data) {
-			foreach ($data as $pessoa) { ?>
+			<?php if ($pessoas) {
+			foreach ($pessoas as $pessoa) { ?>
 			<tr>
 				<td><?= $pessoa->nome ." ". $pessoa->sobrenome ?></td>
 				<td>

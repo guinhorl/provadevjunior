@@ -9,11 +9,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<form id="FormCadastro" name="FormCadastro" method="post" action="<?php echo base_url('Pessoa/cadastrarPessoa')?>" class="form form-contact">
 		<div class="form-group">
 			<label for="nome">Nome</label>
-			<input type="text" class="form-control" id="nome" name="nome">
+			<input type="text" class="form-control" id="nome" name="nome" required>
 		</div>
 		<div class="form-group">
 			<label for="sobreNome">Sobrenome</label>
-			<input type="text" class="form-control" id="sobreNome" name="sobreNome">
+			<input type="text" class="form-control" id="sobreNome" name="sobreNome" required>
 		</div>
 
 		<button type="submit" class="btn btn-success">Salvar</button>

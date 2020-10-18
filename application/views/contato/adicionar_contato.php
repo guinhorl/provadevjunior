@@ -6,11 +6,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<div class="col-md-6 form-alig align-items-center p-3 my-3 shadow-sm">
 		<div class="h3" style="text-align: center;">
 			<p>Adicionar Contato</p>
+
 		</div>
-		<div class="form-group">
+
+		<div class="h4" style="text-align: center;">
 			<br>
 			<?php if ($pessoa) { ?>
-				<h4><?= $pessoa->nome . ' ' . $pessoa->sobrenome ?></h4>
+				<p><?= $pessoa->nome . ' ' . $pessoa->sobrenome ?></p>
 			<?php } ?>
 		</div>
 	</div>
@@ -93,9 +95,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 							<div class="form-group ">
 								<label for="selectTipo">Tipo</label>
-								<select class="form-control form-control-sm" id="addSelectTipo" name="addSelectTipo">
+								<select class="form-control form-control-sm" required id="addSelectTipo" name="addSelectTipo">
 									<?php if ($tipoCont) { ?>
-										<option data-tipo="placeholder">Selecione um tipo</option>
+										<option data-tipo="placeholder"></option>
 										<?php	foreach ($tipoCont as $tipo) { ?>
 											<option data-tipo="<?= $tipo->tipo ?>" value="<?= $tipo->id ?>"><?= $tipo->tipo ?></option>
 										<?php }

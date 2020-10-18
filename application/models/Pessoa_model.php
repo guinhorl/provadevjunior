@@ -72,4 +72,18 @@ class Pessoa_model extends CI_Model
 			return false;
 
 	}
+
+	//Pegar todos as pessoas com pagination
+	public function pag_pessoa($limit, $pag){
+		$this->db->select('id, nome, sobrenome');
+		$this->db->order_by('nome', 'ASC');
+		$this->db->limit($limit, $pag);
+
+		$result = $this->db->get('pessoa')->result();
+		if($result)
+			return $result;
+		else
+			return false;
+
+	}
 }

@@ -35,6 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<!-- Custom styles for this template -->
 	<link href="<?= base_url('assets/dist/css/offcanvas.css') ?>" rel="stylesheet">
 	<link href="<?= base_url('assets/dist/css/estilo.css') ?>" rel="stylesheet">
+
 </head>
 <body class="bg-light">
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark-azul">
