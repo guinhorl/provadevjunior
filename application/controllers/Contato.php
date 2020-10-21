@@ -13,6 +13,7 @@ class Contato extends CI_Controller
 	}
 
 
+	//Listar os contatos de uma pessoa na pagina de editar contato
 	public function verContato($id)
 	{
 		$data['tipoCont'] = $this->contatoModel->listarTiposContatos();
@@ -25,6 +26,7 @@ class Contato extends CI_Controller
 
 	}
 
+	//Cadastrar um novo contato para uma pessoa
 	public function newContato(){
 		$expr = 'bob';
 //		Aqui verifico qual input esta abilitado
@@ -40,7 +42,7 @@ class Contato extends CI_Controller
 				break;
 			default:
 		}
-
+		//Carrega os dados em um array
 		$data = array(
 			'contato' => $expr,
 			'pessoa_id' => $this->input->post('pessoaId'),
@@ -48,11 +50,13 @@ class Contato extends CI_Controller
 		);
 
 		try {
+			//Vericica se um mesmo contato já não existe para ele!
 			if($this->contatoModel->verificarContato($data['contato_id'], $data['contato'])){
 				$this->session->set_flashdata('mensCadastroContato', "<div class='alert alert-danger'>Esse Contato<strong> já está cadastrada! </strong>
             	<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>");
 				redirect(base_url('contato/verContato/' . $data['pessoa_id']));
 			}else{
+				//Se não existir ele cadastra o novo contato!
 				$this->contatoModel->newContato($data);
 				$this->session->set_flashdata('mensCadastroContato', "<div class='alert alert-success'> Contato <strong>cadastrado com sucesso!</strong>
             	<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>");
@@ -64,6 +68,7 @@ class Contato extends CI_Controller
 		}
 	}
 
+	//Editar um contato da pessoa
 	public function editarContato($id){
 		try{
 			if($this->contatoModel->getContato($id)){
@@ -92,6 +97,7 @@ class Contato extends CI_Controller
 
 	}
 
+	//Carregar a pagina de Editar Contato
 	public function editar($id){
 		$dataContato['dataContato'] = $this->contatoModel->getContato($id);
 		$ipPessoa = $dataContato['dataContato']->pessoa_id;
@@ -103,6 +109,7 @@ class Contato extends CI_Controller
 
 	}
 
+	//Exluir um contato
 	public function excluirContato($idCont,$idPess){
 
 		$result = $this->contatoModel->deletarContato($idCont);

@@ -8,8 +8,10 @@ class Pessoa extends CI_Controller {
 		$this->load->model('Pessoa_model', 'pessoaModel');
 	}
 
+	//Cadastrar uma pessoa
 	public function cadastrarPessoa(){
 
+		//Carregar os dados em um Array
 		$data = array(
 			'nome' => $this->input->post('nome'),
 			'sobrenome' => $this->input->post('sobreNome')
@@ -37,6 +39,7 @@ class Pessoa extends CI_Controller {
 
 	}
 
+	//Ediatar os dados de uma pessoa
 	public function editarPessoa($id){
 
 		try {
@@ -65,6 +68,11 @@ class Pessoa extends CI_Controller {
 
 	}
 
+
+	/*
+	 * Deletar uma pessoa
+	 *
+	 * */
 	public function deletarPessoa($id){
 		$result = $this->pessoaModel->deletarPessoa($id);
 		if ($result){

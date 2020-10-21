@@ -4,6 +4,7 @@
 class Pessoa_model extends CI_Model
 {
 
+	//Insert Pessoa
 	public function newPessoa($data){
 		$this->db->insert('pessoa', $data);
 	}
@@ -25,6 +26,7 @@ class Pessoa_model extends CI_Model
 		return $this->db->get('pessoa')->num_rows();;
 	}
 
+	//Listar todas as pessoas
 	public function listarPessoas(){
 		$this->db->select('id, nome, sobrenome')->from('pessoa');
 		$result = $this->db->get()->result();
@@ -53,6 +55,7 @@ class Pessoa_model extends CI_Model
 		}
 	}
 
+	//Pega nome e sobrenome de uma pessoa
 	public function verPessoa($id){
 		$this->db->select('*')->from('pessoa')->where('id', $id);
 		$result = $this->db->get()->result();
@@ -63,6 +66,7 @@ class Pessoa_model extends CI_Model
 		}
 	}
 
+	//Delete Pessoa
 	public function deletarPessoa($id){
 		$this->db->where('id',$id);
 		$this->db->delete('pessoa');
