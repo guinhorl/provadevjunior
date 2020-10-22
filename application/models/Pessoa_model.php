@@ -1,5 +1,5 @@
 <?php
-
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Pessoa_model extends CI_Model
 {
@@ -84,6 +84,18 @@ class Pessoa_model extends CI_Model
 		$this->db->limit($limit, $pag);
 
 		$result = $this->db->get('pessoa')->result();
+		if($result)
+			return $result;
+		else
+			return false;
+
+	}
+
+	/*Pesquisar pela primeira letra do nome*/
+	public function pegarPrimeiraLetra($letra){
+		$this->db->select('id, nome, sobrenome')->from('pessoa');
+		$this->db->like( 'nome', $letra, 'after');
+		$result = $this->db->get()->result();
 		if($result)
 			return $result;
 		else

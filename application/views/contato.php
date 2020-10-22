@@ -64,9 +64,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<td></td>
 					<td>
 						<div class="botaoList">
-							<button class="btn btn-warning btn-sm" data-toggle="modal" data-target="">Editar
-							</button>
-							<a href="#" class="btn btn-danger  btn-sm">Excluir</a>
+							<!--<a href="<?/*= base_url('') */?>" class="btn btn-outline-secondary btn-sm">&#x3C;&#x3C; Voltar</a>-->
 						</div>
 					</td>
 				</tr>

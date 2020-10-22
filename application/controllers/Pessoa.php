@@ -88,4 +88,15 @@ class Pessoa extends CI_Controller {
 
 	}
 
+	/*Buscar pessoas pela primeira letra do nome*/
+	public function primeiraLetraNome($letra){
+		$result['pessoas'] = $this->pessoaModel->pegarPrimeiraLetra($letra);
+
+		if($result){
+			$this->load->view('commos/header');
+			$this->load->view('home', $result);
+			$this->load->view('commos/footer');
+		}
+	}
+
 }

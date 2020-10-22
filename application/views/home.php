@@ -17,9 +17,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<?php echo $this->session->flashdata('mensagemCadastro') ?>
 		<?php echo $this->session->flashdata('mensagemEditar') ?>
 		<?php echo $this->session->flashdata('mensagemDelete') ?>
+
 		<h6 class="border-bottom border-gray pb-2 mb-0">Cadastrados</h6>
+
 		<div style="text-align: center;">
-			<?= $this->pagination->create_links() ?>
+			<?php $this->load->view('commos/links-alfabet') ?>
 		</div>
 		<table class="table table-striped">
 			<thead>
@@ -48,16 +50,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<td>Nenhuma pessoa cadastrada!</td>
 				<td>
 					<div class="botaoList">
-						<a href="<?= base_url() ?>" class="btn btn-primary btn-sm">&#x2795; Contato</a>
-						<a href="<?= base_url() ?>" class="btn btn-success btn-sm">Visualizar</a>
-						<a href="<?= base_url() ?>" class="btn btn-warning btn-sm">Editar</a>
-						<a href="<?= base_url() ?>" class="btn btn-danger  btn-sm">Excluir</a>
+						<a href="<?= base_url('') ?>" class="btn btn-warning btn-sm">&#x3C;&#x3C; Voltar</a>
 					</div>
 				</td>
 			</tr>
 			<?php } ?>
 			</tbody>
 		</table>
+		<div style="text-align: center;">
+			<?= $this->pagination->create_links() ?>
+		</div>
 	</div>
 </main>
 
